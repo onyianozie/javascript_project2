@@ -101,7 +101,7 @@ a{
 }
 
 #header{
-    background-image: url(./headerImg.png);
+    background-image: url(./Assets/headerImg.png);
     background-size: cover;
     color: #FFF7E4;
     height: 100vh;  
