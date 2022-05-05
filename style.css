@@ -71,10 +71,10 @@ a{
     color: #FFF7E4;
 }
 
-.fa-solid{
-    /* display:none; */
+/* .fa-solid{
+    display:none;
 
-}
+} */
 
 .mobile-nav{
     width: 30px;
@@ -85,12 +85,12 @@ a{
 
 /* HEADER */
 
-/* section{
+section{
     padding: 60px 0;
-} */
+}
 
 .container {
-    padding: 0 50px;
+    padding: 60px 50px;
     max-width: 1000px;	
 	margin: 0 auto;
 }
@@ -109,7 +109,7 @@ a{
 
 header{
     align-content: center;
-    padding: 120px 0;
+    padding: 100px 0;
 }
 
 .header-content{ 
@@ -138,19 +138,43 @@ button{
     width: 100%;
     display: flex;
     flex-wrap: wrap;
-    justify-content:space-evenly;
-    align-items:flex-start;
+    justify-content: center;
+    
+}
+.gallery-container{
+    width: 100vw;
+    position: relative;
+    display: flex;
+    justify-content: space-between;
+    flex-wrap: wrap;
+    padding: 10px;
 }
 
-.img{
-    width: 380px;
-    height: 200px;
-    margin: 15px;
-    background-position: 50% 50%;
-    background-size: cover;
-    border-radius: 2px;
+img{
+    width: 240px;
+    height: 240px;
+    padding: 10px;
+    margin: 10px;
 }
 
+.logo{
+ width: 120px;
+ padding: 0;
+margin: 0;
+}
+.mobile-nav{
+    height: auto;
+    padding: 0;
+    margin: 0;
+}
+/* Footer */
+
+footer{
+    background:#B39A62;
+    padding: 50px 0;
+    text-align: center;
+    color: #FFF7E4
+}
 
 @media(max-width: 828px){
     .img{
@@ -224,10 +248,3 @@ button{
 
 
 
-/* Footer */
-/* footer{
-
-    background:#B39A62;
-    padding: 30px 0;
-    text-align: center;
-} */

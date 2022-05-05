@@ -1,59 +1,41 @@
-// We want to display a list of camp photos with their locations.
-// when the user inputs a location 
-// clicks the explore button to show list of camp images
-
-
+// get photos from a collection
+// click button to display a list of camp photos in a allery grid
 
 // Camp Gallery API
-
 // Unsplash API: kNdiDp0P503CDAj8ZVSGMG_NIn8xdGoNqYmXRMoU8s4
 
+// First Step: handle getting the information we're requesting, it returns a promise, which is an object whcih also represents a value.
 
-let apiData = {}
+const campPhotos = {}
+const client_id = 'kNdiDp0P503CDAj8ZVSGMG_NIn8xdGoNqYmXRMoU8s4'
+const collectionID = 'UvyqueUTq1Q'
 
-const input = document.getElementById('input');
-const grid = getelementbyclassName('grid')[0];
 
 
-input.addEventListener('keydown', function(e){
-    if(e.key === 'Enter')
-    loadImg()
-})
+$("button").on('click', function(event){
+    event.preventDefault();
+    $('.grid').empty()
 
-function loadImg(){
+    let search = $("#search").val();
 
-    removeImg();
+    let url = `https://api.unsplash.com/search/photos/?query=camping&landscapes&client_id=kNdiDp0P503CDAj8ZVSGMG_NIn8xdGoNqYmXRMoU8s4&per_page=30`
 
-    const url = 'https://api.unsplash.com/search/photo/?query='+input.value+'$per_page=9&client_id=kNdiDp0P503CDAj8ZVSGMG_NIn8xdGoNqYmXRMoU8s4';
+    $.ajax({
+        url: url,
+        method: 'GET', 
+        success: function(data){
+            console.log(data)
+            data.results.forEach(photo => {
+                $('.grid').append(`
 
-    fetch(url)
+                    <img class="imgs" src= ${photo.urls.full} />
+                         
 
-    .then(response => {
-        if(response.ok)
-        return response.json();
-        else
-            alert(response.status)
-    })
-
-    .then(data => {
-        const imageNodes = [];
-        for(let i = 0; i < data.results.length; i++){
-            imageNodes[i] = document.createElement('div');
-            imageNodes[i].className = 'img';
-            imageNodes[i].style.backgroundImage = 'url('+data.results[i].url.raw+')'
-            imageNodes[i].addEventListener('dbclick', function(){
-                window.open(data.results[i].links.download, '_blank');
+                `)
             })
-
-            grid.appendChild(imageNodes[i]);
         }
 
     })
-}
+})
 
-function removeImg(){
-    grid.innerHTML = '';
-}
-
-
-$('nav')
+    
