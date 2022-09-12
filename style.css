@@ -76,8 +76,7 @@ a{
 
 } */
 
-.mobile-nav{
-    width: 30px;
+.fa-bars{
     color: #FFF7E4;
     cursor: pointer;
     display:none;
@@ -162,11 +161,11 @@ img{
  padding: 0;
 margin: 0;
 }
-.mobile-nav{
+/* .fa-solid{
     height: auto;
     padding: 0;
     margin: 0;
-}
+} */
 /* Footer */
 
 footer{
@@ -190,8 +189,9 @@ footer{
     ul{
         display: none;
     }
-    .mobile-nav{
+    .fa-bars{
         display: inline;
+        color: #B39A62;
     }
 }
 
